@@ -12,6 +12,10 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         :root {
             --black: #1A1A1A;
             --dark-gray: #333333;
@@ -161,9 +165,9 @@
 
         .details-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            max-width: 700px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 900px;
             margin: 0 auto;
         }
 
@@ -214,6 +218,66 @@
             letter-spacing: 1px;
         }
 
+        /* Dress Code / Palette Section */
+        .palette-section {
+            padding: 80px 0;
+            background: var(--off-white);
+            border-top: 1px solid var(--light-gray);
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .palette-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.5rem, 4.5vw, 2rem);
+            text-align: center;
+            margin-bottom: 20px;
+            color: var(--black);
+            font-weight: 400;
+            letter-spacing: 3px;
+        }
+
+        .palette-subtitle {
+            font-size: 0.9rem;
+            text-align: center;
+            color: var(--medium-gray);
+            margin-bottom: 50px;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .palette-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .color-swatch {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .color-swatch:hover {
+            transform: scale(1.05);
+        }
+
+        .color-label {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 500;
+        }
+
         /* Footer */
         footer {
             text-align: center;
@@ -249,6 +313,7 @@
             }
 
             .details-grid {
+                grid-template-columns: 1fr;
                 gap: 50px;
             }
 
@@ -393,14 +458,248 @@
                 font-size: 1.5rem;
             }
         }
+
+        /* Gifts / Wishes Section */
+        .gifts-section {
+            padding: 80px 0;
+            background: var(--white);
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .gifts-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.5rem, 4.5vw, 2rem);
+            text-align: center;
+            margin-bottom: 20px;
+            color: var(--black);
+            font-weight: 400;
+            letter-spacing: 3px;
+        }
+
+        .gifts-text {
+            font-size: 0.95rem;
+            text-align: center;
+            color: var(--medium-gray);
+            max-width: 600px;
+            margin: 0 auto 40px;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        .gifts-highlight {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.1rem, 3vw, 1.3rem);
+            text-align: center;
+            color: var(--black);
+            font-style: italic;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        .gifts-icon {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-top: 30px;
+            opacity: 0.7;
+        }
+
+        /* Palette Responsive */
+        @media (max-width: 768px) {
+            .palette-section {
+                padding: 60px 0;
+            }
+
+            .color-swatch {
+                width: 80px;
+                height: 80px;
+            }
+
+            .color-label {
+                font-size: 0.55rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .palette-section {
+                padding: 50px 0;
+            }
+
+            .color-swatch {
+                width: 70px;
+                height: 70px;
+            }
+
+            .palette-title {
+                font-size: 1.3rem;
+            }
+
+            .palette-subtitle {
+                font-size: 0.8rem;
+                margin-bottom: 40px;
+            }
+        }
+
+        @media (max-width: 375px) {
+            .color-swatch {
+                width: 60px;
+                height: 60px;
+            }
+
+            .color-label {
+                font-size: 0.5rem;
+            }
+        }
+
+        /* Menu Section */
+        .menu-section {
+            padding: 80px 0;
+            background: var(--white);
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .menu-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.5rem, 4.5vw, 2rem);
+            text-align: center;
+            margin-bottom: 20px;
+            color: var(--black);
+            font-weight: 400;
+            letter-spacing: 3px;
+        }
+
+        .menu-text {
+            font-size: 0.95rem;
+            text-align: center;
+            color: var(--medium-gray);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        /* Menu Responsive */
+        @media (max-width: 768px) {
+            .menu-section {
+                padding: 60px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .menu-section {
+                padding: 50px 0;
+            }
+
+            .menu-text {
+                font-size: 0.85rem;
+            }
+        }
+
+        /* Gifts Responsive */
+        @media (max-width: 768px) {
+            .gifts-section {
+                padding: 60px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gifts-section {
+                padding: 50px 0;
+            }
+
+            .gifts-text {
+                font-size: 0.85rem;
+            }
+
+            .gifts-highlight {
+                font-size: 1rem;
+            }
+
+            .gifts-icon {
+                font-size: 2rem;
+            }
+        }
+
+        /* RSVP / Contact Section */
+        .rsvp-section {
+            padding: 80px 0;
+            background: var(--off-white);
+            border-top: 1px solid var(--light-gray);
+        }
+
+        .rsvp-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.5rem, 4.5vw, 2rem);
+            text-align: center;
+            margin-bottom: 20px;
+            color: var(--black);
+            font-weight: 400;
+            letter-spacing: 3px;
+        }
+
+        .rsvp-text {
+            font-size: 0.95rem;
+            text-align: center;
+            color: var(--medium-gray);
+            max-width: 600px;
+            margin: 0 auto 30px;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        .rsvp-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .rsvp-link {
+            font-size: 0.9rem;
+            color: var(--black);
+            text-decoration: none;
+            padding: 12px 24px;
+            border: 1px solid var(--medium-gray);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
+        }
+
+        .rsvp-link:hover {
+            background: var(--black);
+            color: var(--white);
+            border-color: var(--black);
+        }
+
+        /* RSVP Responsive */
+        @media (max-width: 768px) {
+            .rsvp-section {
+                padding: 60px 0;
+            }
+
+            .rsvp-links {
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .rsvp-section {
+                padding: 50px 0;
+            }
+
+            .rsvp-link {
+                padding: 10px 18px;
+                font-size: 0.85rem;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
         <div class="container">
-            <h1 class="couple-names">Александра <span class="ampersand">&</span> Яков</h1>
+            <h1 class="couple-names">Яков <span class="ampersand">&</span> Александра</h1>
             <p class="wedding-date">13 июня 2026</p>
-            <p class="tagline">Пожениться? Поженимся!</p>
+            <p class="tagline">Приглашаем Вас на нашу свадьбу</p>
         </div>
     </header>
 
@@ -439,6 +738,17 @@
             <h2 class="details-title">Детали дня</h2>
             <div class="details-grid">
                 <div class="detail-card">
+                    <div class="card-icon">🕐</div>
+                    <h3 class="card-title">Сбор гостей</h3>
+                    <p class="card-time">15:30</p>
+                    <p class="card-location">
+                        <strong>Архангельская слобода</strong>
+                        Ульяновская область,<br>
+                        Чердаклинский район,<br>
+                        село Архангельское
+                    </p>
+                </div>
+                <div class="detail-card">
                     <div class="card-icon">💍</div>
                     <h3 class="card-title">Церемония</h3>
                     <p class="card-time">16:00</p>
@@ -446,7 +756,6 @@
                         <strong>Архангельская слобода</strong>
                         Ульяновская область,<br>
                         Чердаклинский район,<br>
-                        Мирновское сельское поселение,<br>
                         село Архангельское
                     </p>
                 </div>
@@ -458,10 +767,68 @@
                         <strong>Архангельская слобода</strong>
                         Ульяновская область,<br>
                         Чердаклинский район,<br>
-                        Мирновское сельское поселение,<br>
                         село Архангельское
                     </p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="palette-section">
+        <div class="container">
+            <h2 class="palette-title">Дресс-код</h2>
+            <p class="palette-subtitle">Будем признательны, если в оформлении наряда вы поддержите цветовую гамму нашей свадьбы</p>
+            <div class="palette-container">
+                <div class="color-swatch" style="background-color: #644D42;">
+                    <span class="color-label">#644D42</span>
+                </div>
+                <div class="color-swatch" style="background-color: #503C35;">
+                    <span class="color-label">#503C35</span>
+                </div>
+                <div class="color-swatch" style="background-color: #FFE0CF;">
+                    <span class="color-label">#FFE0CF</span>
+                </div>
+                <div class="color-swatch" style="background-color: #D5C1B8;">
+                    <span class="color-label">#D5C1B8</span>
+                </div>
+                <div class="color-swatch" style="background-color: #D59F9C;">
+                    <span class="color-label">#D59F9C</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="menu-section">
+        <div class="container">
+            <h2 class="menu-title">Меню</h2>
+            <p class="menu-text">
+                Меню разнообразно, поэтому сообщите нам заранее,<br>
+                если у вас есть какие-либо предпочтения или диетические ограничения.
+            </p>
+        </div>
+    </section>
+
+    <section class="gifts-section">
+        <div class="container">
+            <h2 class="gifts-title">Пожелания к подаркам</h2>
+            <p class="gifts-text">
+                Ваше присутствие — уже самый главный подарок для нас!<br><br>
+                Мы понимаем, что дарить цветы на свадьбу - это традиция,<br>но мы не сможем насладиться их красотой в полной мере...<br><br>
+                Будем рады любой другой альтернативе (вино или в денежном эквиваленте).
+            </p>
+        </div>
+    </section>
+
+    <section class="rsvp-section">
+        <div class="container">
+            <h2 class="rsvp-title">Подтверждение присутствия</h2>
+            <p class="rsvp-text">
+                Пожалуйста, подтвердите свое присутствие до 13.05.2026 сообщением<br>
+                в Telegram (там же можете сообщить о своих пожеланиях):
+            </p>
+            <div class="rsvp-links">
+                <a href="https://t.me/nomad_root" class="rsvp-link">Яков</a>
+                <a href="https://t.me/aleksasssssssss" class="rsvp-link">Александра</a>
             </div>
         </div>
     </section>
