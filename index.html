@@ -692,6 +692,241 @@
                 font-size: 0.85rem;
             }
         }
+
+        /* RSVP Form */
+        .rsvp-form-container {
+            max-width: 500px;
+            margin: 40px auto 0;
+            padding: 30px;
+            background: var(--white);
+            border: 1px solid var(--light-gray);
+            border-radius: 4px;
+        }
+
+        .rsvp-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group label {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--black);
+            letter-spacing: 1px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            padding: 12px 16px;
+            border: 1px solid var(--light-gray);
+            border-radius: 4px;
+            background: var(--white);
+            color: var(--black);
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--medium-gray);
+        }
+
+        .form-group input:disabled,
+        .form-group select:disabled,
+        .form-group textarea:disabled {
+            background: var(--light-gray);
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .form-group input[type="number"] {
+            max-width: 100px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-submit {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            padding: 14px 28px;
+            background: var(--black);
+            color: var(--white);
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .form-submit:hover {
+            background: var(--dark-gray);
+        }
+
+        .form-submit:disabled {
+            background: var(--light-gray);
+            cursor: not-allowed;
+        }
+
+        .form-message {
+            padding: 15px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            text-align: center;
+            display: none;
+        }
+
+        .form-message.success {
+            background: #e8f5e9;
+            color: #2e7d32;
+            border: 1px solid #a5d6a7;
+        }
+
+        .form-message.error {
+            background: #ffebee;
+            color: #c62828;
+            border: 1px solid #ef9a9a;
+        }
+
+        .form-divider {
+            text-align: center;
+            margin: 10px 0;
+            font-size: 0.85rem;
+            color: var(--medium-gray);
+        }
+
+        /* Form Responsive */
+        @media (max-width: 768px) {
+            .rsvp-form-container {
+                padding: 20px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .form-group input[type="number"] {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .rsvp-form-container {
+                padding: 15px;
+                margin: 30px auto 0;
+            }
+
+            .form-group {
+                gap: 6px;
+            }
+
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                padding: 10px 12px;
+                font-size: 0.85rem;
+            }
+
+            .form-submit {
+                padding: 12px 20px;
+                font-size: 0.85rem;
+            }
+        }
+
+        /* Alcohol Options */
+        .alcohol-options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 15px;
+            border: 1px solid var(--light-gray);
+            border-radius: 4px;
+            background: var(--off-white);
+        }
+
+        .checkbox-single {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            user-select: none;
+        }
+
+        .checkbox-single input[type="checkbox"],
+        .checkbox-item input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+            accent-color: var(--black);
+        }
+
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 10px 0 10px 28px;
+            border-left: 2px solid var(--light-gray);
+            margin-left: 10px;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            user-select: none;
+        }
+
+        .checkbox-group.disabled {
+            opacity: 0.4;
+            pointer-events: none;
+        }
+
+        /* Alcohol Options Responsive */
+        @media (max-width: 480px) {
+            .alcohol-options {
+                padding: 12px;
+                gap: 10px;
+            }
+
+            .checkbox-group {
+                padding: 8px 0 8px 24px;
+            }
+
+            .checkbox-single,
+            .checkbox-item {
+                font-size: 0.85rem;
+            }
+
+            .checkbox-single input[type="checkbox"],
+            .checkbox-item input[type="checkbox"] {
+                width: 16px;
+                height: 16px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -823,12 +1058,107 @@
         <div class="container">
             <h2 class="rsvp-title">Подтверждение присутствия</h2>
             <p class="rsvp-text">
-                Пожалуйста, подтвердите свое присутствие до 13.05.2026 сообщением<br>
-                в Telegram (там же можете сообщить о своих пожеланиях):
+                Пожалуйста, подтвердите свое присутствие до 13.05.2026<br>
+                или напишите нам в Telegram:
             </p>
             <div class="rsvp-links">
-                <a href="https://t.me/nomad_root" class="rsvp-link">Яков</a>
-                <a href="https://t.me/aleksasssssssss" class="rsvp-link">Александра</a>
+                <a href="https://t.me/nomad_root" class="rsvp-link" target="_blank">Яков</a>
+                <a href="https://t.me/aleksasssssssss" class="rsvp-link" target="_blank">Александра</a>
+            </div>
+            
+            <div class="rsvp-form-container">
+                <form class="rsvp-form" id="rsvpForm" action="https://script.google.com/macros/s/AKfycbw4OsFzqwzHi92-igJd9UWW7_4qRDoAyPVNukwXfUoL_jlXIYFCwz76fBgyAT_UXpkmBQ/exec" method="POST">
+                    <div class="form-group">
+                        <label for="name">Ваше имя *</label>
+                        <input type="text" id="name" name="name" required placeholder="Иван и Мария Ивановы">
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="attendance">Присутствие *</label>
+                            <select id="attendance" name="attendance" required>
+                                <option value="" disabled selected>Выберите</option>
+                                <option value="Присутствую">С радостью приду</option>
+                                <option value="Присутствую с парой">Приду с парой</option>
+                                <option value="Присутствую с детьми">Приду с детьми</option>
+                                <option value="К сожалению, не смогу">К сожалению, не смогу</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="guests">Количество гостей</label>
+                            <input type="number" id="guests" name="guests" min="0" max="10" value="1" placeholder="1">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="menu">Предпочтения по меню</label>
+                        <select id="menu" name="menu">
+                            <option value="" selected>Без предпочтений</option>
+                            <option value="Мясо">Мясо</option>
+                            <option value="Рыба">Рыба</option>
+                            <option value="Вегетарианское">Вегетарианское</option>
+                            <option value="Детское">Детское</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Алкогольные предпочтения</label>
+                        <div class="alcohol-options">
+                            <label class="checkbox-single">
+                                <input type="checkbox" name="alcohol_all" value="Пью всё" class="alcohol-toggle">
+                                <span>Пью всё</span>
+                            </label>
+                            
+                            <div class="checkbox-group" id="alcoholSpecific">
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="alcohol[]" value="Крепкое">
+                                    <span>Крепкое</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="alcohol[]" value="Вино красное">
+                                    <span>Вино красное</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="alcohol[]" value="Вино белое">
+                                    <span>Вино белое</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="alcohol[]" value="Шампанское">
+                                    <span>Шампанское</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="alcohol[]" value="Пиво">
+                                    <span>Пиво</span>
+                                </label>
+                            </div>
+                            
+                            <label class="checkbox-single">
+                                <input type="checkbox" name="alcohol_none" value="Не пью алкоголь" class="alcohol-toggle">
+                                <span>Не пью алкоголь</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="allergies">Аллергии / Ограничения</label>
+                        <input type="text" id="allergies" name="allergies" placeholder="Например: орехи, лактоза">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contact">Контакты для связи</label>
+                        <input type="text" id="contact" name="contact" placeholder="Telegram или телефон">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="comment">Комментарий</label>
+                        <textarea id="comment" name="comment" placeholder="Пожелания или вопросы"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="form-submit">Отправить ответ</button>
+                    
+                    <div class="form-message" id="formMessage"></div>
+                </form>
             </div>
         </div>
     </section>
@@ -841,6 +1171,7 @@
     </footer>
 
     <script>
+        // Таймер обратного отсчёта
         function updateTimer() {
             const weddingDate = new Date('2026-06-13T16:00:00+03:00');
             const now = new Date();
@@ -867,6 +1198,141 @@
 
         updateTimer();
         setInterval(updateTimer, 1000);
+
+        // Обработка формы RSVP
+        // ВАЖНО: Замените YOUR_SCRIPT_ID на ваш ID скрипта Google Apps
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw4OsFzqwzHi92-igJd9UWW7_4qRDoAyPVNukwXfUoL_jlXIYFCwz76fBgyAT_UXpkmBQ/exec';
+
+        const form = document.getElementById('rsvpForm');
+        const formMessage = document.getElementById('formMessage');
+        const submitBtn = form.querySelector('.form-submit');
+
+        // Логика переключения алкогольных опций
+        const alcoholAllCheckbox = form.querySelector('input[name="alcohol_all"]');
+        const alcoholNoneCheckbox = form.querySelector('input[name="alcohol_none"]');
+        const alcoholSpecificCheckboxes = form.querySelectorAll('input[name="alcohol[]"]');
+        const alcoholSpecificGroup = document.getElementById('alcoholSpecific');
+
+        function toggleAlcoholOptions() {
+            if (alcoholAllCheckbox.checked) {
+                alcoholSpecificGroup.classList.add('disabled');
+                alcoholNoneCheckbox.checked = false;
+                alcoholSpecificCheckboxes.forEach(cb => {
+                    cb.checked = false;
+                });
+            } else if (alcoholNoneCheckbox.checked) {
+                alcoholSpecificGroup.classList.add('disabled');
+                alcoholAllCheckbox.checked = false;
+                alcoholSpecificCheckboxes.forEach(cb => {
+                    cb.checked = false;
+                });
+            } else {
+                alcoholSpecificGroup.classList.remove('disabled');
+                alcoholAllCheckbox.checked = false;
+            }
+        }
+
+        // Исключаем взаимный выбор "Пью всё" и "Не пью алкоголь"
+        alcoholAllCheckbox.addEventListener('change', function() {
+            toggleAlcoholOptions();
+        });
+
+        alcoholNoneCheckbox.addEventListener('change', function() {
+            toggleAlcoholOptions();
+        });
+
+        // Снимаем "Пью всё" и "Не пью алкоголь" при выборе конкретного варианта
+        alcoholSpecificCheckboxes.forEach(cb => {
+            cb.addEventListener('change', function() {
+                if (this.checked) {
+                    alcoholAllCheckbox.checked = false;
+                    alcoholNoneCheckbox.checked = false;
+                    alcoholSpecificGroup.classList.remove('disabled');
+                }
+                // Если ни один конкретный чекбокс не выбран, разрешаем выбор "Пью всё" / "Не пью алкоголь"
+                const anySpecificChecked = Array.from(alcoholSpecificCheckboxes).some(cb => cb.checked);
+                if (!anySpecificChecked) {
+                    alcoholSpecificGroup.classList.remove('disabled');
+                }
+            });
+        });
+
+        // Инициализация
+        toggleAlcoholOptions();
+
+        // Логика поля "Количество гостей"
+        const attendanceSelect = form.querySelector('select[name="attendance"]');
+        const guestsInput = form.querySelector('input[name="guests"]');
+
+        attendanceSelect.addEventListener('change', function() {
+            if (this.value === 'К сожалению, не смогу') {
+                guestsInput.value = '0';
+                guestsInput.disabled = true;
+            } else {
+                guestsInput.disabled = false;
+                // Если было 0, ставим 1 при смене на присутствую
+                if (guestsInput.value === '0') {
+                    guestsInput.value = '1';
+                }
+            }
+        });
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Блокируем кнопку отправки
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Отправка...';
+            formMessage.style.display = 'none';
+            formMessage.className = 'form-message';
+
+            // Собираем данные формы
+            const formData = new FormData(form);
+            
+            // Обрабатываем алкоголь вручную для корректной отправки
+            let alcoholValue = '';
+            if (alcoholAllCheckbox.checked) {
+                alcoholValue = 'Пью всё';
+            } else if (alcoholNoneCheckbox.checked) {
+                alcoholValue = 'Не пью алкоголь';
+            } else {
+                const selectedAlcohol = [];
+                alcoholSpecificCheckboxes.forEach(cb => {
+                    if (cb.checked) {
+                        selectedAlcohol.push(cb.value);
+                    }
+                });
+                alcoholValue = selectedAlcohol.join(', ');
+            }
+            formData.set('alcohol', alcoholValue);
+
+            // Отправляем данные в Google Apps Script
+            fetch(SCRIPT_URL, {
+                method: 'POST',
+                body: formData,
+                mode: 'no-cors' // Важно для обхода CORS
+            })
+            .then(() => {
+                // Показываем сообщение об успехе
+                formMessage.textContent = 'Спасибо! Ваш ответ успешно отправлен.';
+                formMessage.className = 'form-message success';
+                formMessage.style.display = 'block';
+                form.reset();
+                toggleAlcoholOptions(); // Сброс состояния алкогольных опций
+            })
+            .catch(error => {
+                // Показываем сообщение об ошибке
+                formMessage.textContent = 'Произошла ошибка при отправке. Пожалуйста, попробуйте ещё раз или напишите нам в Telegram.';
+                formMessage.className = 'form-message error';
+                formMessage.style.display = 'block';
+                console.error('Ошибка отправки формы:', error);
+            })
+            .finally(() => {
+                // Разблокируем кнопку
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Отправить ответ';
+            });
+        });
     </script>
 </body>
 </html>
